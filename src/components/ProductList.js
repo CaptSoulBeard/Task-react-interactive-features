@@ -1,17 +1,20 @@
 // Components
+import { useState } from "react";
 import ProductItem from "./ProductItem";
 import SearchBar from "./SearchBar";
 // Data
 import products from "../products";
 
 const ProductList = () => {
-  const productList = products.map((product) => (
-    <ProductItem product={product} key={product.id} />
-  ));
+  const [query, setQuery] = useState("");
+
+  const productList = products
+    .filter((product) => product.name.includes(query))
+    .map((product) => <ProductItem product={product} key={product.id} />);
 
   return (
     <>
-      <SearchBar />
+      <SearchBar setQuery={setQuery} />
       <div className="listWrapper">{productList}</div>
     </>
   );

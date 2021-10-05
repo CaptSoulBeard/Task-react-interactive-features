@@ -1,15 +1,10 @@
-
 import Home from "./components/Home";
 // Components
 import ProductList from "./components/ProductList";
 //styling
-import "./App.css"
-
-
+import "./App.css";
 
 function App() {
-
-
   return (
     <div>
       <Home />

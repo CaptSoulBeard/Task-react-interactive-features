@@ -1,5 +1,3 @@
-
-
 const ProductItem = (props) => {
   const product = props.product;
 
